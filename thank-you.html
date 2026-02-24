@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Booking confirmed — Elevate Carpet Care. Thank you for choosing us.">
+    <title>Booking Confirmed | Elevate Carpet Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">E</span>
+                <span class="logo-text">Elevate<span class="logo-light">Carpet Care</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="areas.html">Areas</a></li>
+                <li><a href="commercial.html">Commercial</a></li>
+                <li><a href="booking.html" class="btn btn-nav">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Thank You Section -->
+    <section class="section thank-you-section">
+        <div class="container">
+            <div class="thank-you-card">
+                <div class="thank-you-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M20 33l8 8 16-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1>Booking confirmed.</h1>
+                <p class="thank-you-sub">We've sent a confirmation to your email and you'll receive an SMS with your exact arrival window shortly.</p>
+                <div class="thank-you-details" id="thankYouDetails">
+                    <div class="detail-row">
+                        <span class="detail-label">Booking reference</span>
+                        <span class="detail-value" id="bookingRef">ECC-240226-001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Service</span>
+                        <span class="detail-value" id="bookingService">Deep Carpet Cleaning</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Date</span>
+                        <span class="detail-value" id="bookingDate">—</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Time slot</span>
+                        <span class="detail-value" id="bookingTime">Morning (8:00 – 12:00)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Deposit paid</span>
+                        <span class="detail-value" id="bookingDeposit">£20</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upsell Section -->
+            <div class="upsell-section">
+                <h2>Make the most of your appointment.</h2>
+                <p class="upsell-intro">Add any of these to your booking and we'll take care of it on the day. No extra visit needed.</p>
+                <div class="upsell-grid">
+                    <div class="upsell-card" id="upsellProtection">
+                        <h3>Add Stain Protection?</h3>
+                        <p>Invisible barrier that repels spills and prevents permanent staining. Lasts 12–18 months.</p>
+                        <p class="upsell-price">+£25 per room</p>
+                        <button class="btn btn-outline btn-sm upsell-btn" data-upsell="protection">Add to Booking</button>
+                    </div>
+                    <div class="upsell-card" id="upsellMattress">
+                        <h3>Add Mattress Clean?</h3>
+                        <p>Deep extraction and sanitisation. Remove dust mites, allergens, and built-up grime.</p>
+                        <p class="upsell-price">+£50 per mattress</p>
+                        <button class="btn btn-outline btn-sm upsell-btn" data-upsell="mattress">Add to Booking</button>
+                    </div>
+                    <div class="upsell-card" id="upsellSofa">
+                        <h3>Add Sofa Clean?</h3>
+                        <p>While we're there — get your sofa looking brand new. Same appointment, no extra hassle.</p>
+                        <p class="upsell-price">From £90</p>
+                        <button class="btn btn-outline btn-sm upsell-btn" data-upsell="sofa">Add to Booking</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscription CTA -->
+            <div class="subscription-cta">
+                <div class="subscription-cta-inner">
+                    <div class="subscription-cta-content">
+                        <h3>Save 15% with a Quarterly Cleaning Plan</h3>
+                        <p>Subscribe to quarterly deep cleans and save 15% on every visit. We schedule, remind, and deliver — you just confirm. 12-month minimum commitment, billed every 3 months via Stripe.</p>
+                        <ul class="sub-benefits-inline">
+                            <li>15% off every clean</li>
+                            <li>Priority scheduling</li>
+                            <li>Billed quarterly via Stripe</li>
+                            <li>12-month commitment</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary" id="subscribeBtn">Subscribe & Save 15%</a>
+                </div>
+            </div>
+
+            <!-- Referral -->
+            <div class="referral-section">
+                <h3>Know someone who'd love this?</h3>
+                <p>Refer a friend and you both get £15 off your next clean.</p>
+                <div class="referral-share">
+                    <input type="text" value="https://elevatecarpetcare.co.uk/ref/ECC001" readonly class="referral-link" id="referralLink">
+                    <button class="btn btn-secondary btn-sm" id="copyReferral">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo logo-footer">
+                        <span class="logo-mark">E</span>
+                        <span class="logo-text">Elevate<span class="logo-light">Carpet Care</span></span>
+                    </a>
+                    <p>Premium deep carpet & upholstery restoration specialists serving Camden & Islington.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#carpet">Deep Carpet Cleaning</a></li>
+                        <li><a href="services.html#tenancy">End of Tenancy</a></li>
+                        <li><a href="services.html#upholstery">Upholstery & Rug Care</a></li>
+                        <li><a href="services.html#addons">Add-Ons</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <ul>
+                        <li><a href="areas/camden.html">Camden</a></li>
+                        <li><a href="areas/islington.html">Islington</a></li>
+                        <li><a href="areas/angel.html">Angel</a></li>
+                        <li><a href="areas/kentish-town.html">Kentish Town</a></li>
+                        <li><a href="areas/highbury.html">Highbury</a></li>
+                        <li><a href="areas/holloway.html">Holloway</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:02071234567">020 7123 4567</a></li>
+                        <li><a href="mailto:hello@elevatecarpetcare.co.uk">hello@elevatecarpetcare.co.uk</a></li>
+                        <li><a href="booking.html">Book Online</a></li>
+                        <li><a href="commercial.html">Commercial Enquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elevate Carpet Care. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

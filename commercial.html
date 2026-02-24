@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Commercial carpet cleaning, landlord priority accounts, and letting agent partnerships. Elevate Carpet Care — Camden & Islington.">
+    <title>Commercial & Landlord Services | Elevate Carpet Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">E</span>
+                <span class="logo-text">Elevate<span class="logo-light">Carpet Care</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="areas.html">Areas</a></li>
+                <li><a href="commercial.html" class="active">Commercial</a></li>
+                <li><a href="booking.html" class="btn btn-nav">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <p class="section-tag">Commercial & Landlord</p>
+            <h1>Built for professionals<br><span class="text-accent">who manage properties.</span></h1>
+            <p class="page-header-sub">Letting agents, landlords, Airbnb hosts, and commercial spaces. Priority accounts with volume pricing.</p>
+        </div>
+    </header>
+
+    <!-- Landlord Priority -->
+    <section class="section">
+        <div class="container">
+            <div class="commercial-grid">
+                <div class="commercial-card">
+                    <span class="service-number">01</span>
+                    <h2>Landlord Priority Account</h2>
+                    <p>Dedicated account for landlords and letting agents managing multiple properties. No more chasing quotes — just book and go.</p>
+                    <ul class="service-includes">
+                        <li>Priority same-day & next-day slots</li>
+                        <li>Volume pricing (5+ properties/month)</li>
+                        <li>Direct invoicing to agency or landlord</li>
+                        <li>Deposit protection documentation standard</li>
+                        <li>Before & after photo reports</li>
+                        <li>Dedicated account contact</li>
+                    </ul>
+                </div>
+                <div class="commercial-card">
+                    <span class="service-number">02</span>
+                    <h2>Airbnb & Serviced Apartments</h2>
+                    <p>Fast turnaround between guests. Consistent quality that keeps your ratings high and your reviews glowing.</p>
+                    <ul class="service-includes">
+                        <li>2-hour turnaround available</li>
+                        <li>Recurring schedule setup</li>
+                        <li>Key holder / access arrangements</li>
+                        <li>Stain protection for high-turnover units</li>
+                        <li>Monthly invoicing</li>
+                    </ul>
+                </div>
+                <div class="commercial-card">
+                    <span class="service-number">03</span>
+                    <h2>Commercial Spaces</h2>
+                    <p>Offices, clinics, co-working spaces, retail — anywhere with carpet that sees heavy traffic. Out-of-hours service available.</p>
+                    <ul class="service-includes">
+                        <li>After-hours and weekend scheduling</li>
+                        <li>Area-based pricing for large spaces</li>
+                        <li>Quarterly maintenance contracts</li>
+                        <li>Health & safety documentation</li>
+                        <li>Multi-site discounts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Request Form -->
+    <section class="section section-light" id="quote">
+        <div class="container">
+            <div class="quote-wrapper">
+                <div class="quote-info">
+                    <p class="section-tag">Get in Touch</p>
+                    <h2 class="section-title">Request a commercial quote.</h2>
+                    <p>Tell us about your property or portfolio and we'll put together a custom quote within 24 hours.</p>
+                    <div class="quote-contact">
+                        <p><strong>Or call us directly:</strong></p>
+                        <a href="tel:02071234567" class="quote-phone">020 7123 4567</a>
+                        <p><a href="mailto:commercial@elevatecarpetcare.co.uk">commercial@elevatecarpetcare.co.uk</a></p>
+                    </div>
+                </div>
+                <form class="quote-form" id="quoteForm">
+                    <div class="form-group">
+                        <label for="qName">Full name *</label>
+                        <input type="text" id="qName" name="qName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qCompany">Company / Agency name</label>
+                        <input type="text" id="qCompany" name="qCompany">
+                    </div>
+                    <div class="form-group">
+                        <label for="qEmail">Email *</label>
+                        <input type="email" id="qEmail" name="qEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qPhone">Phone *</label>
+                        <input type="tel" id="qPhone" name="qPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qType">Enquiry type *</label>
+                        <select id="qType" name="qType" required>
+                            <option value="">Select...</option>
+                            <option value="landlord">Landlord Priority Account</option>
+                            <option value="agent">Letting Agent Partnership</option>
+                            <option value="airbnb">Airbnb / Serviced Apartments</option>
+                            <option value="commercial">Commercial Space</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="qProperties">Number of properties / units</label>
+                        <input type="text" id="qProperties" name="qProperties" placeholder="e.g. 5 flats, 1 office">
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="qMessage">Tell us about your needs *</label>
+                        <textarea id="qMessage" name="qMessage" rows="4" required placeholder="Describe your properties, frequency needed, any specific requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Request Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-cta">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Ready to set up your account?</h2>
+            <p class="text-light cta-sub">Landlords and agents — get priority access, volume pricing, and a dedicated contact.</p>
+            <div class="cta-actions">
+                <a href="#quote" class="btn btn-primary btn-lg">Request Commercial Quote</a>
+                <a href="tel:02071234567" class="btn btn-outline-light btn-lg">Call 020 7123 4567</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo logo-footer">
+                        <span class="logo-mark">E</span>
+                        <span class="logo-text">Elevate<span class="logo-light">Carpet Care</span></span>
+                    </a>
+                    <p>Premium deep carpet & upholstery restoration specialists serving Camden & Islington.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#carpet">Deep Carpet Cleaning</a></li>
+                        <li><a href="services.html#tenancy">End of Tenancy</a></li>
+                        <li><a href="services.html#upholstery">Upholstery & Rug Care</a></li>
+                        <li><a href="services.html#addons">Add-Ons</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <ul>
+                        <li><a href="areas/camden.html">Camden</a></li>
+                        <li><a href="areas/islington.html">Islington</a></li>
+                        <li><a href="areas/angel.html">Angel</a></li>
+                        <li><a href="areas/kentish-town.html">Kentish Town</a></li>
+                        <li><a href="areas/highbury.html">Highbury</a></li>
+                        <li><a href="areas/holloway.html">Holloway</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:02071234567">020 7123 4567</a></li>
+                        <li><a href="mailto:hello@elevatecarpetcare.co.uk">hello@elevatecarpetcare.co.uk</a></li>
+                        <li><a href="booking.html">Book Online</a></li>
+                        <li><a href="commercial.html">Commercial Enquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elevate Carpet Care. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your carpet or upholstery clean online. Choose your date, time, and service. Secure with a small deposit.">
+    <title>Book Online | Elevate Carpet Care | Camden & Islington</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">E</span>
+                <span class="logo-text">Elevate<span class="logo-light">Carpet Care</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="areas.html">Areas</a></li>
+                <li><a href="commercial.html">Commercial</a></li>
+                <li><a href="booking.html" class="btn btn-nav active">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Booking Header -->
+    <header class="page-header page-header-sm">
+        <div class="container">
+            <h1>Book your clean.</h1>
+            <p class="page-header-sub">Secure your slot with a small deposit. We'll confirm everything by SMS.</p>
+        </div>
+    </header>
+
+    <!-- Booking Form -->
+    <section class="section">
+        <div class="container">
+            <div class="booking-wrapper">
+                <!-- Progress Steps -->
+                <div class="booking-progress">
+                    <div class="progress-step active" data-step="1">
+                        <span class="step-num">1</span>
+                        <span class="step-label">Service</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <span class="step-num">2</span>
+                        <span class="step-label">Details</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">
+                        <span class="step-num">3</span>
+                        <span class="step-label">Schedule</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="4">
+                        <span class="step-num">4</span>
+                        <span class="step-label">Confirm</span>
+                    </div>
+                </div>
+
+                <form id="bookingForm" class="booking-form">
+                    <!-- Step 1: Service Selection -->
+                    <div class="booking-step active" id="step1">
+                        <h2>Choose your service</h2>
+                        <div class="service-select-grid">
+                            <label class="service-select-card">
+                                <input type="radio" name="service" value="carpet" checked>
+                                <div class="service-select-inner">
+                                    <h3>Deep Carpet Cleaning</h3>
+                                    <p>Per-room or whole-home deep extraction</p>
+                                    <span class="service-select-price">From £65/room</span>
+                                </div>
+                            </label>
+                            <label class="service-select-card">
+                                <input type="radio" name="service" value="tenancy">
+                                <div class="service-select-inner">
+                                    <h3>End of Tenancy</h3>
+                                    <p>Full property clean with deposit documentation</p>
+                                    <span class="service-select-price">From £250</span>
+                                </div>
+                            </label>
+                            <label class="service-select-card">
+                                <input type="radio" name="service" value="upholstery">
+                                <div class="service-select-inner">
+                                    <h3>Upholstery & Rug</h3>
+                                    <p>Sofas, armchairs, rugs, and fabric care</p>
+                                    <span class="service-select-price">Sofas from £90</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Dynamic details based on service -->
+                        <div class="service-config" id="carpetConfig">
+                            <h3>How many rooms?</h3>
+                            <div class="config-row">
+                                <div class="config-item">
+                                    <label>Bedrooms / living rooms</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="bookRooms">−</button>
+                                        <input type="number" id="bookRooms" name="bookRooms" value="1" min="0" max="10" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="bookRooms">+</button>
+                                    </div>
+                                </div>
+                                <div class="config-item">
+                                    <label>Hallways / landings</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="bookHalls">−</button>
+                                        <input type="number" id="bookHalls" name="bookHalls" value="0" min="0" max="5" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="bookHalls">+</button>
+                                    </div>
+                                </div>
+                                <div class="config-item">
+                                    <label>Flights of stairs</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="bookStairs">−</button>
+                                        <input type="number" id="bookStairs" name="bookStairs" value="0" min="0" max="5" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="bookStairs">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-config hidden" id="tenancyConfig">
+                            <h3>Property size</h3>
+                            <div class="config-row">
+                                <label class="radio-card">
+                                    <input type="radio" name="propertySize" value="studio" checked>
+                                    <span>Studio / 1-bed</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="propertySize" value="2bed">
+                                    <span>2-bed flat</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="propertySize" value="3bed">
+                                    <span>3-bed house</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="propertySize" value="4bed">
+                                    <span>4+ bed</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="service-config hidden" id="upholsteryConfig">
+                            <h3>What needs cleaning?</h3>
+                            <div class="config-row">
+                                <div class="config-item">
+                                    <label>Sofas</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="bookSofas">−</button>
+                                        <input type="number" id="bookSofas" name="bookSofas" value="1" min="0" max="5" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="bookSofas">+</button>
+                                    </div>
+                                </div>
+                                <div class="config-item">
+                                    <label>Armchairs</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="bookChairs">−</button>
+                                        <input type="number" id="bookChairs" name="bookChairs" value="0" min="0" max="10" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="bookChairs">+</button>
+                                    </div>
+                                </div>
+                                <div class="config-item">
+                                    <label>Rugs</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="bookRugs">−</button>
+                                        <input type="number" id="bookRugs" name="bookRugs" value="0" min="0" max="10" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="bookRugs">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add-ons -->
+                        <div class="addons-section">
+                            <h3>Add-ons <span class="optional-tag">optional</span></h3>
+                            <div class="addon-checks">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addonPet" id="addonPet">
+                                    <span class="checkmark"></span>
+                                    Pet stain & odour treatment <span class="addon-inline-price">+£30/room</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addonProtection" id="addonProtection">
+                                    <span class="checkmark"></span>
+                                    Stain protection coating <span class="addon-inline-price">+£25/room</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addonMattress" id="addonMattress">
+                                    <span class="checkmark"></span>
+                                    Mattress sanitisation <span class="addon-inline-price">+£50</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addonPriority" id="addonPriority">
+                                    <span class="checkmark"></span>
+                                    Same-day priority <span class="addon-inline-price">+£40</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Booking Estimate -->
+                        <div class="booking-estimate">
+                            <div class="booking-estimate-inner">
+                                <span class="estimate-label">Estimated total</span>
+                                <span class="estimate-amount" id="bookingEstimate">£65 – £80</span>
+                            </div>
+                            <p class="estimate-note">Final price confirmed on-site. Minimum call-out £120.</p>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-primary btn-lg" id="toStep2">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Contact Details -->
+                    <div class="booking-step" id="step2">
+                        <h2>Your details</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">First name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="address">Property address *</label>
+                                <input type="text" id="address" name="address" required placeholder="Start typing your address...">
+                            </div>
+                            <div class="form-group">
+                                <label for="postcode">Postcode *</label>
+                                <input type="text" id="postcode" name="postcode" required placeholder="e.g. N1 2AB">
+                            </div>
+                            <div class="form-group">
+                                <label for="accessNotes">Access notes <span class="optional-tag">optional</span></label>
+                                <input type="text" id="accessNotes" name="accessNotes" placeholder="e.g. buzzer code, parking info">
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="notes">Additional notes <span class="optional-tag">optional</span></label>
+                                <textarea id="notes" name="notes" rows="3" placeholder="Anything else we should know — specific stains, pets, etc."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-secondary" id="backToStep1">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="toStep3">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Date & Time -->
+                    <div class="booking-step" id="step3">
+                        <h2>Choose your date & time</h2>
+                        <div class="schedule-grid">
+                            <div class="form-group">
+                                <label for="bookingDate">Preferred date *</label>
+                                <input type="date" id="bookingDate" name="bookingDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred time slot *</label>
+                                <div class="time-slots">
+                                    <label class="time-slot">
+                                        <input type="radio" name="timeSlot" value="morning" checked>
+                                        <span>
+                                            <strong>Morning</strong>
+                                            8:00 – 12:00
+                                        </span>
+                                    </label>
+                                    <label class="time-slot">
+                                        <input type="radio" name="timeSlot" value="afternoon">
+                                        <span>
+                                            <strong>Afternoon</strong>
+                                            12:00 – 16:00
+                                        </span>
+                                    </label>
+                                    <label class="time-slot">
+                                        <input type="radio" name="timeSlot" value="evening">
+                                        <span>
+                                            <strong>Evening</strong>
+                                            16:00 – 19:00
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="schedule-note">We'll confirm your exact arrival time by SMS within 2 hours of booking.</p>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-secondary" id="backToStep2">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="toStep4">Continue to Payment</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation & Payment -->
+                    <div class="booking-step" id="step4">
+                        <h2>Confirm & pay deposit</h2>
+
+                        <div class="booking-summary">
+                            <h3>Booking Summary</h3>
+                            <div class="summary-rows" id="summaryRows">
+                                <!-- Populated by JS -->
+                            </div>
+                            <div class="summary-total">
+                                <div class="summary-row">
+                                    <span>Estimated total</span>
+                                    <span class="summary-total-amount" id="summaryTotal">£65 – £80</span>
+                                </div>
+                                <div class="summary-row summary-deposit">
+                                    <span>Deposit due now</span>
+                                    <span class="summary-deposit-amount" id="summaryDeposit">£20</span>
+                                </div>
+                                <p class="summary-note">Remaining balance due on the day of service.</p>
+                            </div>
+                        </div>
+
+                        <!-- Payment -->
+                        <div class="payment-section">
+                            <h3>Payment details</h3>
+                            <p class="payment-note">Secure deposit payment to confirm your booking.</p>
+                            <div class="form-grid">
+                                <div class="form-group form-group-full">
+                                    <label for="cardName">Name on card *</label>
+                                    <input type="text" id="cardName" name="cardName" required>
+                                </div>
+                                <div class="form-group form-group-full">
+                                    <label for="cardNumber">Card number *</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardExpiry">Expiry *</label>
+                                    <input type="text" id="cardExpiry" name="cardExpiry" required placeholder="MM / YY" maxlength="7">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardCvc">CVC *</label>
+                                    <input type="text" id="cardCvc" name="cardCvc" required placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+                            <p class="payment-secure">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 7V5a4 4 0 118 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="2" y="7" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                                Secure 256-bit SSL encrypted payment
+                            </p>
+                        </div>
+
+                        <div class="terms-check">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="termsAgree" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Cancellation Policy</a>
+                            </label>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-secondary" id="backToStep3">Back</button>
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitBooking">Pay Deposit & Confirm Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo logo-footer">
+                        <span class="logo-mark">E</span>
+                        <span class="logo-text">Elevate<span class="logo-light">Carpet Care</span></span>
+                    </a>
+                    <p>Premium deep carpet & upholstery restoration specialists serving Camden & Islington.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#carpet">Deep Carpet Cleaning</a></li>
+                        <li><a href="services.html#tenancy">End of Tenancy</a></li>
+                        <li><a href="services.html#upholstery">Upholstery & Rug Care</a></li>
+                        <li><a href="services.html#addons">Add-Ons</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <ul>
+                        <li><a href="areas/camden.html">Camden</a></li>
+                        <li><a href="areas/islington.html">Islington</a></li>
+                        <li><a href="areas/angel.html">Angel</a></li>
+                        <li><a href="areas/kentish-town.html">Kentish Town</a></li>
+                        <li><a href="areas/highbury.html">Highbury</a></li>
+                        <li><a href="areas/holloway.html">Holloway</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:02071234567">020 7123 4567</a></li>
+                        <li><a href="mailto:hello@elevatecarpetcare.co.uk">hello@elevatecarpetcare.co.uk</a></li>
+                        <li><a href="booking.html">Book Online</a></li>
+                        <li><a href="commercial.html">Commercial Enquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elevate Carpet Care. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
