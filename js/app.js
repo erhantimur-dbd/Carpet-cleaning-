@@ -39,6 +39,7 @@
         initBookingForm();
         initThankYouPage();
         initQuoteForm();
+        initPartnerForm();
         initScrollEffects();
         initDatePicker();
     });
@@ -824,6 +825,32 @@
             // In production: POST to your server/email service
             setTimeout(function() {
                 showToast('Quote request sent. We\'ll be in touch within 24 hours.', 'success');
+                form.reset();
+                if (btn) {
+                    btn.classList.remove('loading');
+                    btn.disabled = false;
+                }
+            }, 1500);
+        });
+    }
+
+    // ---- Partner Form ----
+    function initPartnerForm() {
+        var form = document.getElementById('partnerForm');
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var btn = form.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.classList.add('loading');
+                btn.disabled = true;
+            }
+
+            // In production: POST to your server/email service
+            setTimeout(function() {
+                showToast('Application submitted! We\'ll review it within 48 hours and be in touch.', 'success');
                 form.reset();
                 if (btn) {
                     btn.classList.remove('loading');
