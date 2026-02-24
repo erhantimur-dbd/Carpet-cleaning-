@@ -40,6 +40,7 @@
         initThankYouPage();
         initQuoteForm();
         initPartnerForm();
+        initBlogSubscribe();
         initScrollEffects();
         initDatePicker();
     });
@@ -857,6 +858,32 @@
                     btn.disabled = false;
                 }
             }, 1500);
+        });
+    }
+
+    // ---- Blog Subscribe ----
+    function initBlogSubscribe() {
+        var form = document.getElementById('blogSubscribe');
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var btn = form.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.classList.add('loading');
+                btn.disabled = true;
+            }
+
+            // In production: POST to your email service (Mailchimp, ConvertKit, etc.)
+            setTimeout(function() {
+                showToast('Subscribed! You\'ll receive our latest articles by email.', 'success');
+                form.reset();
+                if (btn) {
+                    btn.classList.remove('loading');
+                    btn.disabled = false;
+                }
+            }, 1000);
         });
     }
 
