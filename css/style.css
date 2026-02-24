@@ -263,6 +263,18 @@ h4 { font-size: 1rem; font-weight: 600; }
     background: var(--color-mid);
 }
 
+.btn-accent {
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+    border-color: var(--color-accent);
+    font-weight: 700;
+}
+
+.btn-accent:hover {
+    background: #d4b87a;
+    border-color: #d4b87a;
+}
+
 .btn-outline {
     background: transparent;
     color: var(--color-primary);
